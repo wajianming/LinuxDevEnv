@@ -3,13 +3,13 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -28,7 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'scrooloose/nerdtree' " 加入NERDTree
-
+Plugin 'aceofall/gtags.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,6 +63,19 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 :nmap <C-o> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+" CTags
+" cd project/
+" find . -name "*.[ch]" > gtags.files
+" gtags
+" global -u
+set cscopetag
+set cscopeprg=gtags-cscope
+let GtagsCscope_Auto_Load = 1
+let GtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
+cs add GTAGS
+
 
 " Function keys
 :nnoremap <F3> :ls<CR>
