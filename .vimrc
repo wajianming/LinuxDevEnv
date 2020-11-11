@@ -1,3 +1,4 @@
+syntax on
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -29,6 +30,13 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree' " 加入NERDTree
 Plugin 'aceofall/gtags.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'dense-analysis/ale'
+Plugin 'vim-airline/vim-airline'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,7 +55,10 @@ filetype plugin indent on    " required
 
 
 set t_Co=256
-colorscheme nerv-ous
+"colorscheme nerv-ous
+colorscheme monokai
+"set termguicolors
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -76,9 +87,47 @@ let GtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
 cs add GTAGS
 
+" javascript
+let g:javascript_plugin_jsdoc = 1
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+set conceallevel=1
 
+let b:ale_fixers = ['prettier', 'eslint']
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+
+
+set guifont=Monaco:h14:b
 " Function keys
 :nnoremap <F3> :ls<CR>
 :nnoremap <F7> :tabp<CR>
 :nnoremap <F8> :tabn<CR>
+
+:set cul
+:set ruler
+:set magic
+:set cursorline
+:set foldenable
+:set report=0
+:set showmatch
+:set number
+map <F4> :NERDTreeToggle<CR>
+imap <F4> <ESC> :NERDTreeToggle<CR>
 
