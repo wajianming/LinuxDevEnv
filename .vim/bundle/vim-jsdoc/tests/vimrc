@@ -1,0 +1,12 @@
+" Minimal vimrc to run tests
+" --------------------------
+set nocompatible
+filetype off
+" Clear all rtp
+set rtp=$VIMRUNTIME
+
+set rtp+=./vader.vim
+set rtp+=../
+filetype plugin indent on
+
+set tabstop=2 shiftwidth=2 softtabstop=2 expandtab

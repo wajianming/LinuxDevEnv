@@ -1,0 +1,10 @@
+{
+  "name": "jsdoc.vim",
+  "version": "2.1.0",
+  "main": "index.js",
+  "author": "Shinya Ohyanagi",
+  "private": true,
+  "devDependencies": {
+    "lehre": "latest"
+  }
+}

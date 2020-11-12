@@ -1,0 +1,10 @@
+g:jsdoc_formatter	jsdoc.txt	/*g:jsdoc_formatter*
+g:jsdoc_lehre_path	jsdoc.txt	/*g:jsdoc_lehre_path*
+g:jsdoc_templates_path	jsdoc.txt	/*g:jsdoc_templates_path*
+jsdoc-changelog	jsdoc.txt	/*jsdoc-changelog*
+jsdoc-vim-contents	jsdoc.txt	/*jsdoc-vim-contents*
+jsdoc-vim-install	jsdoc.txt	/*jsdoc-vim-install*
+jsdoc-vim-introduction	jsdoc.txt	/*jsdoc-vim-introduction*
+jsdoc-vim-tutorial	jsdoc.txt	/*jsdoc-vim-tutorial*
+jsdoc-vim-variables	jsdoc.txt	/*jsdoc-vim-variables*
+jsdoc.txt	jsdoc.txt	/*jsdoc.txt*
