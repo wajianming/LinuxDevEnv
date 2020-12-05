@@ -37,6 +37,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'Yggdroot/indentLine'
+Plugin 'drmingdrmer/vim-tabbar'
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -93,32 +95,30 @@ augroup javascript_folding
     au!
     au FileType javascript setlocal foldmethod=syntax
 augroup END
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-let g:javascript_conceal_noarg_arrow_function = "🞅"
-let g:javascript_conceal_underscore_arrow_function = "🞅"
-set conceallevel=1
+"let g:javascript_conceal_function             = "ƒ"
+"let g:javascript_conceal_null                 = "ø"
+"let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_return               = "⇚"
+"let g:javascript_conceal_undefined            = "¿"
+"let g:javascript_conceal_NaN                  = "ℕ"
+"let g:javascript_conceal_prototype            = "¶"
+"let g:javascript_conceal_static               = "•"
+"let g:javascript_conceal_super                = "Ω"
+"let g:javascript_conceal_arrow_function       = "⇒"
+"let g:javascript_conceal_noarg_arrow_function = "🞅"
+"let g:javascript_conceal_underscore_arrow_function = "🞅"
+"set conceallevel=1
 
-let b:ale_fixers = ['prettier', 'eslint']
+let b:ale_fixers = ['eslint']
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+let g:Tb_MaxSize = 2
 
 set guifont=Monaco:h14:b
 " Function keys
-:nnoremap <F3> :ls<CR>
-:nnoremap <F7> :tabp<CR>
-:nnoremap <F8> :tabn<CR>
 
 :set cul
 :set ruler
@@ -127,7 +127,12 @@ set guifont=Monaco:h14:b
 :set foldenable
 :set report=0
 :set showmatch
-:set number
+":set number
 map <F4> :NERDTreeToggle<CR>
 imap <F4> <ESC> :NERDTreeToggle<CR>
-
+map <F5> :ALEToggle<CR>
+imap <F5> <ESC> :ALEToggle<CR>
+" :ALEFix eslint
+:nnoremap <F3> :ls<CR>
+:nnoremap <F11> :tabp<CR>
+:nnoremap <F12> :tabn<CR>
